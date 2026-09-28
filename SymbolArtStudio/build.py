@@ -1,14 +1,19 @@
-#!/usr/bin/env python3
-"""Build the self-contained offline HTML. Python standard library only."""
-import json
+"""Build the standalone HTML from src. Python 3; no dependencies."""
 from pathlib import Path
-root=Path(__file__).resolve().parent
-parts={'I18N':'i18n.js','STYLE':'style.css','VENDOR':'vendor/BlowfishCrypto.js','CODEC':'codec.js','ASSETS':'assets.js','RENDERER':'renderer.js','APP':'app.js'}
-html=(root/'index.template.html').read_text()
-for name,filename in parts.items():
- text=(root/filename).read_text()
- if name=='I18N':text=text.replace('/*CATALOG*/',(root/'locales.json').read_text())
- if name!='STYLE':text=text.replace('</script','<\\/script')
- html=html.replace('/*'+name+'*/',text)
-(root/'SymbolArtStudio.html').write_text(html)
-print('Built',root/'SymbolArtStudio.html')
+import re
+ROOT = Path(__file__).resolve().parent
+
+def build():
+    html = (ROOT / 'src/index.template.html').read_text(encoding='utf-8')
+    def embed(match):
+        kind, name = match.groups()
+        tag, ext = ('script', 'js') if kind == 'SCRIPT' else ('style', 'css')
+        text = (ROOT / 'src' / f'{name}.{ext}').read_text(encoding='utf-8')
+        return f'<{tag}>\n{text}</{tag}>'
+    html = re.sub(r'\{\{(SCRIPT|STYLE):([\w-]+)\}\}', embed, html)
+    target = ROOT / 'SymbolArtStudio-v1.html'
+    target.write_text(html, encoding='utf-8')
+    print(f'Built {target.name} ({target.stat().st_size:,} bytes)')
+
+if __name__ == '__main__':
+    build()

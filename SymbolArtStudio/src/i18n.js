@@ -1,0 +1,728 @@
+/* Symbol Art Studio i18n — GPL-3.0-or-later. No network or document-data mutations. */
+(function(root){
+'use strict';
+const catalog={
+  "Symbol Art Studio · PSO2 离线编辑器": {
+    "en": "Symbol Art Studio · PSO2 Offline Editor",
+    "ja": "Symbol Art Studio · PSO2 オフラインエディター"
+  },
+  "PSO2 · 离线预览与编辑": {
+    "en": "PSO2 · Offline preview & editing",
+    "ja": "PSO2 · オフラインプレビュー・編集"
+  },
+  "打开 SAR / 工程": {
+    "en": "Open SAR / Project",
+    "ja": "SAR / プロジェクトを開く"
+  },
+  "加载示例": {
+    "en": "Load sample",
+    "ja": "サンプル"
+  },
+  "新建": {
+    "en": "New",
+    "ja": "新規"
+  },
+  "↶ 撤销": {
+    "en": "↶ Undo",
+    "ja": "↶ 元に戻す"
+  },
+  "↷ 重做": {
+    "en": "↷ Redo",
+    "ja": "↷ やり直す"
+  },
+  "保存工程": {
+    "en": "Save project",
+    "ja": "プロジェクト保存"
+  },
+  "导出 PNG": {
+    "en": "Export PNG",
+    "ja": "PNG 書き出し"
+  },
+  "导出 SAR ↓": {
+    "en": "Export SAR ↓",
+    "ja": "SAR 書き出し ↓"
+  },
+  "图层": {
+    "en": "Layers",
+    "ja": "レイヤー"
+  },
+  "添加符号": {
+    "en": "Add symbol",
+    "ja": "シンボルを追加"
+  },
+  "＋ 添加": {
+    "en": "＋ Add",
+    "ja": "＋ 追加"
+  },
+  "上移一层": {
+    "en": "Move up one layer",
+    "ja": "レイヤーを1つ上へ"
+  },
+  "↑ 上移": {
+    "en": "↑ Up",
+    "ja": "↑ 上へ"
+  },
+  "下移一层": {
+    "en": "Move down one layer",
+    "ja": "レイヤーを1つ下へ"
+  },
+  "↓ 下移": {
+    "en": "↓ Down",
+    "ja": "↓ 下へ"
+  },
+  "复制": {
+    "en": "Duplicate",
+    "ja": "複製"
+  },
+  "删除": {
+    "en": "Delete",
+    "ja": "削除"
+  },
+  "图层列表": {
+    "en": "Layer list",
+    "ja": "レイヤー一覧"
+  },
+  "列表顶部为最上层 · 最多 225 层": {
+    "en": "Top of list = front · Up to 225 layers",
+    "ja": "リスト上部が最前面 · 最大225レイヤー"
+  },
+  "正在载入…": {
+    "en": "Loading…",
+    "ja": "読み込み中…"
+  },
+  "本地处理": {
+    "en": "Local processing",
+    "ja": "ローカル処理"
+  },
+  "游戏画幅": {
+    "en": "Game frame",
+    "ja": "ゲーム表示範囲"
+  },
+  "完整工作区": {
+    "en": "Full workspace",
+    "ja": "全体表示"
+  },
+  "仅选中层": {
+    "en": "Solo layer",
+    "ja": "選択レイヤーのみ"
+  },
+  "控制点": {
+    "en": "Handles",
+    "ja": "制御点"
+  },
+  "背景": {
+    "en": "Background",
+    "ja": "背景"
+  },
+  "透明网格": {
+    "en": "Checkerboard",
+    "ja": "透明グリッド"
+  },
+  "白色": {
+    "en": "White",
+    "ja": "白"
+  },
+  "深色": {
+    "en": "Dark",
+    "ja": "暗色"
+  },
+  "表情包编辑画布": {
+    "en": "Symbol Art editing canvas",
+    "ja": "シンボルアート編集キャンバス"
+  },
+  "拖动图层移动 · 拖动角点变形 · 方向键微调": {
+    "en": "Drag to move · Drag corners to reshape · Arrow keys to nudge",
+    "ja": "ドラッグで移動 · 四隅で変形 · 矢印キーで微調整"
+  },
+  "准备中…": {
+    "en": "Preparing…",
+    "ja": "準備中…"
+  },
+  "使用说明 / 关于": {
+    "en": "Help / About",
+    "ja": "使い方 / このソフトについて"
+  },
+  "图层属性": {
+    "en": "Layer properties",
+    "ja": "レイヤーのプロパティ"
+  },
+  "在左侧列表或画布中选择图层，": {
+    "en": "Select a layer in the list or canvas",
+    "ja": "一覧またはキャンバスでレイヤーを選択すると、"
+  },
+  "即可调整颜色、形状与位置。": {
+    "en": "to edit its color, shape and position.",
+    "ja": "色・形状・位置を編集できます。"
+  },
+  "当前符号": {
+    "en": "Current symbol",
+    "ja": "現在のシンボル"
+  },
+  "更换符号": {
+    "en": "Replace symbol",
+    "ja": "シンボル変更"
+  },
+  "显示此图层": {
+    "en": "Show this layer",
+    "ja": "このレイヤーを表示"
+  },
+  "图层颜色": {
+    "en": "Layer color",
+    "ja": "レイヤーの色"
+  },
+  "不透明度": {
+    "en": "Opacity",
+    "ja": "不透明度"
+  },
+  "颜色及透明度按游戏档位存储。": {
+    "en": "Colors and opacity use the game's discrete levels.",
+    "ja": "色と不透明度はゲームの段階値で保存されます。"
+  },
+  "变换": {
+    "en": "Transform",
+    "ja": "変形"
+  },
+  "中心 X": {
+    "en": "Center X",
+    "ja": "中心 X"
+  },
+  "中心 Y": {
+    "en": "Center Y",
+    "ja": "中心 Y"
+  },
+  "旋转角度": {
+    "en": "Angle (degrees)",
+    "ja": "回転角度"
+  },
+  "应用旋转": {
+    "en": "Apply rotation",
+    "ja": "回転を適用"
+  },
+  "缩放比例 %": {
+    "en": "Scale %",
+    "ja": "拡大率 %"
+  },
+  "应用缩放": {
+    "en": "Apply scale",
+    "ja": "拡大縮小を適用"
+  },
+  "水平翻转": {
+    "en": "Flip horizontally",
+    "ja": "左右反転"
+  },
+  "垂直翻转": {
+    "en": "Flip vertically",
+    "ja": "上下反転"
+  },
+  "四角坐标（0–255）": {
+    "en": "Corner coordinates (0–255)",
+    "ja": "四隅の座標（0–255）"
+  },
+  "作品设置": {
+    "en": "Artwork settings",
+    "ja": "作品設定"
+  },
+  "作品名称": {
+    "en": "Artwork name",
+    "ja": "作品名"
+  },
+  "画幅": {
+    "en": "Format",
+    "ja": "表示形式"
+  },
+  "联盟旗帜 · 32 × 32": {
+    "en": "Alliance flag · 32 × 32",
+    "ja": "チームフラッグ · 32 × 32"
+  },
+  "音效编号": {
+    "en": "Sound ID",
+    "ja": "サウンド ID"
+  },
+  "保留原音效编号，本工具不播放音效。": {
+    "en": "The sound ID is preserved; audio preview is not available.",
+    "ja": "サウンド ID は保持されます。試聴機能はありません。"
+  },
+  "选择符号": {
+    "en": "Choose a symbol",
+    "ja": "シンボルを選択"
+  },
+  "内置": {
+    "en": "Includes ",
+    "ja": "内蔵："
+  },
+  "个符号素材 · ID 与 SAR 内部编号一致": {
+    "en": " symbol assets · IDs match the SAR format",
+    "ja": " 個のシンボル素材 · ID は SAR 内部の番号に対応"
+  },
+  "✕ 关闭": {
+    "en": "✕ Close",
+    "ja": "✕ 閉じる"
+  },
+  "搜索符号 ID，例如 240": {
+    "en": "Search symbol ID, e.g. 240",
+    "ja": "シンボル ID を検索（例：240）"
+  },
+  "使用说明": {
+    "en": "How to use",
+    "ja": "使い方"
+  },
+  "双击打开此 HTML 即可使用，无需安装、联网或上传文件。也可把 SAR 或本工具 JSON 工程拖入窗口。": {
+    "en": "Open this HTML file in your browser. No installation, connection or upload is required. You can also drop SAR files or this editor's JSON projects onto the window.",
+    "ja": "この HTML ファイルをブラウザーで開くだけで使えます。インストール・通信・アップロードは不要です。SAR ファイルや本エディターの JSON プロジェクトをウィンドウにドロップして開くこともできます。"
+  },
+  "在左侧选择图层，或点击画面中的图形。": {
+    "en": "Select a layer on the left, or click a shape on the canvas.",
+    "ja": "左の一覧でレイヤーを選択するか、キャンバス上の図形をクリックします。"
+  },
+  "拖动已选图层移动。拖动四角控制点自由变形；右侧可精确修改坐标、颜色、透明度与旋转缩放。": {
+    "en": "Drag a selected layer to move it. Drag its corner handles to reshape it. Use the right panel for precise coordinates, color, opacity, rotation and scale.",
+    "ja": "選択したレイヤーをドラッグして移動します。四隅の制御点をドラッグすると自由に変形できます。右のパネルで座標・色・不透明度・回転・拡大縮小を細かく設定できます。"
+  },
+  "“完整工作区”显示游戏裁切范围以外的图形。虚线框表示游戏可见区域。": {
+    "en": "Full workspace shows shapes beyond the game crop. The dashed rectangle marks the area visible in the game.",
+    "ja": "「全体表示」ではゲームの表示範囲外も確認できます。破線の枠内がゲームで表示される範囲です。"
+  },
+  "“保存工程”保留图层名称与编辑数据；“导出 SAR”生成游戏格式；PNG 始终导出完整作品的游戏画幅，不包含辅助线。": {
+    "en": "Save project preserves layer names and editable data. Export SAR creates a game-format file. PNG always exports the complete artwork in the game frame without guides.",
+    "ja": "「プロジェクト保存」はレイヤー名と編集データを保存します。「SAR 書き出し」はゲーム形式のファイルを作成します。PNG は常にゲームの表示範囲内の作品全体を書き出し、補助線は含みません。"
+  },
+  "快捷键：": {
+    "en": "Shortcuts: ",
+    "ja": "ショートカット："
+  },
+  "Ctrl/Cmd+Z 撤销；Ctrl/Cmd+Shift+Z 或 Ctrl+Y 重做；方向键移动 1，Shift+方向键移动 10；Delete 删除；Ctrl/Cmd+D 复制；Ctrl/Cmd+S 导出 SAR。": {
+    "en": "Ctrl/Cmd+Z: undo; Ctrl/Cmd+Shift+Z or Ctrl+Y: redo; arrow keys: move by 1; Shift+arrows: move by 10; Delete: delete; Ctrl/Cmd+D: duplicate; Ctrl/Cmd+S: export SAR.",
+    "ja": "Ctrl/Cmd+Z：元に戻す、Ctrl/Cmd+Shift+Z または Ctrl+Y：やり直す、矢印キー：1移動、Shift+矢印キー：10移動、Delete：削除、Ctrl/Cmd+D：複製、Ctrl/Cmd+S：SAR 書き出し。"
+  },
+  "编辑会保存到当前浏览器的本地草稿（浏览器允许时）。跨设备或重要修改请下载 SAR / JSON；刷新后的草稿恢复会先询问你。": {
+    "en": "Edits are saved as a local browser draft when storage is available. Download SAR / JSON for important work or transfer to another device. You will be asked before restoring a draft on reload.",
+    "ja": "ブラウザーが許可する場合、編集内容はローカルの下書きに保存されます。大切な作品の保存や他の端末への移動には SAR / JSON をダウンロードしてください。再読み込み後の下書き復元時には確認が表示されます。"
+  },
+  "兼容范围：": {
+    "en": "Compatibility: ",
+    "ja": "対応範囲："
+  },
+  "支持 04 / 84 SAR、最多 225 图层；缺少素材会明确列出 ID，未知图层数据仍可编辑和导出。导出使用未压缩 SAR，体积可能增大。游戏内表现与导入尚需你在 PSO2 客户端中确认。": {
+    "en": "Supports 04 / 84 SAR and up to 225 layers. Missing assets are identified by ID; their layer data remains editable and exportable. SAR export is uncompressed and may be larger. Import and rendering still need verification in the PSO2 client.",
+    "ja": "04 / 84 SAR、最大225レイヤーに対応しています。素材がない場合は ID を表示し、そのレイヤーのデータは引き続き編集・書き出しできます。SAR は非圧縮で書き出すため、ファイルが大きくなる場合があります。インポートと表示は PSO2 クライアントでの確認が必要です。"
+  },
+  "关于与许可": {
+    "en": "About & license",
+    "ja": "このソフトについて / ライセンス"
+  },
+  "，© 2021 Arthur Malulley B. de O.；部分原始格式工作来自 HybridEidolon。本工具源码按 GPL-3.0-or-later 提供，可依许可复制、修改、分发；无担保。游戏素材版权归 SEGA / 相关权利人。完整源码与许可见下载包。": {
+    "en": ", © 2021 Arthur Malulley B. de O. Earlier format work was contributed by HybridEidolon. Source code is provided under GPL-3.0-or-later and may be copied, modified and distributed under that license, without warranty. Game assets belong to SEGA / their respective owners. The download package includes complete source and license text.",
+    "ja": "（© 2021 Arthur Malulley B. de O.）。初期の形式解析には HybridEidolon の成果を使用しています。本ソフトのソースコードは GPL-3.0-or-later で提供され、同ライセンスに従って複製・改変・再配布できます。無保証です。ゲーム素材の権利は SEGA または各権利者に帰属します。完全なソースとライセンスはダウンロードパッケージに含まれます。"
+  },
+  "查看 GPL 完整许可": {
+    "en": "View full GPL license",
+    "ja": "GPL ライセンス全文"
+  },
+  "语言": {
+    "en": "Language",
+    "ja": "言語"
+  },
+  "左上": {
+    "en": "TL",
+    "ja": "左上"
+  },
+  "左下": {
+    "en": "BL",
+    "ja": "左下"
+  },
+  "右上": {
+    "en": "TR",
+    "ja": "右上"
+  },
+  "右下": {
+    "en": "BR",
+    "ja": "右下"
+  },
+  "操作失败：": {
+    "en": "Operation failed: ",
+    "ja": "操作に失敗しました："
+  },
+  "草稿已保存": {
+    "en": "Draft saved",
+    "ja": "下書き保存済み"
+  },
+  "请下载保存": {
+    "en": "Download to save",
+    "ja": "ダウンロードして保存"
+  },
+  "修改完成": {
+    "en": "Changes applied",
+    "ja": "変更を適用しました"
+  },
+  "已撤销": {
+    "en": "Undone",
+    "ja": "元に戻しました"
+  },
+  "已重做": {
+    "en": "Redone",
+    "ja": "やり直しました"
+  },
+  "缺少符号素材：": {
+    "en": "Missing symbol assets: ",
+    "ja": "見つからないシンボル素材："
+  },
+  "。这些图层当前不渲染，但所有数据会保留在 SAR / 工程中。": {
+    "en": ". These layers are not rendered, but all data is preserved in SAR / projects.",
+    "ja": "。これらのレイヤーは表示されませんが、すべてのデータは SAR / プロジェクトに保持されます。"
+  },
+  "文件过大（上限 1 MB）": {
+    "en": "File is too large (maximum 1 MB)",
+    "ja": "ファイルが大きすぎます（上限 1 MB）"
+  },
+  "当前修改尚未导出。打开新文件并替换当前作品？": {
+    "en": "Changes have not been exported. Open the new file and replace the current artwork?",
+    "ja": "変更内容はまだ書き出されていません。新しいファイルを開き、現在の作品を置き換えますか？"
+  },
+  "已打开 ": {
+    "en": "Opened ",
+    "ja": "開きました："
+  },
+  " 个图层": {
+    "en": " layers",
+    "ja": " レイヤー"
+  },
+  "未命名作品": {
+    "en": "Untitled artwork",
+    "ja": "無題の作品"
+  },
+  " 个图层 · ": {
+    "en": " layers · ",
+    "ja": " レイヤー · "
+  },
+  "32 × 32 联盟旗帜": {
+    "en": "32 × 32 alliance flag",
+    "ja": "32 × 32 チームフラッグ"
+  },
+  " · 作者 ID ": {
+    "en": " · Author ID ",
+    "ja": " · 作者 ID "
+  },
+  "图层 ": {
+    "en": "Layer ",
+    "ja": "レイヤー "
+  },
+  "隐藏图层": {
+    "en": "Hide layer",
+    "ja": "レイヤーを非表示"
+  },
+  "显示图层": {
+    "en": "Show layer",
+    "ja": "レイヤーを表示"
+  },
+  "已修改图层可见性": {
+    "en": "Layer visibility updated",
+    "ja": "レイヤーの表示状態を変更しました"
+  },
+  "图层名称（仅保存在 JSON 工程中）": {
+    "en": "Layer name (saved only in JSON projects)",
+    "ja": "レイヤー名（JSON プロジェクトのみに保存）"
+  },
+  "图层已重命名": {
+    "en": "Layer renamed",
+    "ja": "レイヤー名を変更しました"
+  },
+  "请选择图层": {
+    "en": "Select a layer",
+    "ja": "レイヤーを選択"
+  },
+  "符号 #": {
+    "en": "Symbol #",
+    "ja": "シンボル #"
+  },
+  "顶点坐标必须是 0–255 的整数": {
+    "en": "Corner coordinates must be integers from 0 to 255",
+    "ja": "頂点の座標は 0–255 の整数にしてください"
+  },
+  "已修改顶点": {
+    "en": "Corner updated",
+    "ja": "頂点を変更しました"
+  },
+  "完整工作区 · 0–255": {
+    "en": "Full workspace · 0–255",
+    "ja": "全体表示 · 0–255"
+  },
+  "游戏画幅 · ": {
+    "en": "Game frame · ",
+    "ja": "ゲーム表示範囲 · "
+  },
+  "变换超出 0–255 坐标范围，请缩小或移近中心": {
+    "en": "Transform exceeds the 0–255 coordinate range. Reduce the size or move closer to the center.",
+    "ja": "変形が 0–255 の座標範囲を超えます。縮小するか、中心付近に移動してください。"
+  },
+  "变换已应用": {
+    "en": "Transform applied",
+    "ja": "変形を適用しました"
+  },
+  " 副本": {
+    "en": " copy",
+    "ja": " のコピー"
+  },
+  "已复制图层": {
+    "en": "Layer duplicated",
+    "ja": "レイヤーを複製しました"
+  },
+  "已删除图层，可撤销": {
+    "en": "Layer deleted; undo is available",
+    "ja": "レイヤーを削除しました。元に戻せます"
+  },
+  "已导出 SAR · 未压缩格式，保留全部图层属性": {
+    "en": "SAR exported · Uncompressed, with all layer properties preserved",
+    "ja": "SAR を書き出しました · 非圧縮、すべてのレイヤー属性を保持"
+  },
+  "已保存可编辑 JSON 工程": {
+    "en": "Editable JSON project saved",
+    "ja": "編集可能な JSON プロジェクトを保存しました"
+  },
+  "部分图层缺少素材，PNG 中会缺失这些图层。仍然导出？": {
+    "en": "Some layers have missing assets and will not appear in the PNG. Export anyway?",
+    "ja": "素材が見つからないレイヤーは PNG に表示されません。それでも書き出しますか？"
+  },
+  "已导出透明 PNG · 游戏画幅、全部可见图层、不含控制点": {
+    "en": "Transparent PNG exported · Game frame, all visible layers, no handles",
+    "ja": "透過 PNG を書き出しました · ゲーム表示範囲、すべての表示レイヤー、制御点なし"
+  },
+  "添加符号图层": {
+    "en": "Add symbol layer",
+    "ja": "シンボルレイヤーを追加"
+  },
+  "更换当前符号": {
+    "en": "Replace current symbol",
+    "ja": "現在のシンボルを変更"
+  },
+  "已达到 225 图层上限": {
+    "en": "The 225-layer limit has been reached",
+    "ja": "レイヤー数の上限（225）に達しています"
+  },
+  "已添加图层": {
+    "en": "Layer added",
+    "ja": "レイヤーを追加しました"
+  },
+  "已更换符号": {
+    "en": "Symbol replaced",
+    "ja": "シンボルを変更しました"
+  },
+  "已调整图层位置": {
+    "en": "Layer position adjusted",
+    "ja": "レイヤーの位置を調整しました"
+  },
+  "替换当前作品并加载原始示例？": {
+    "en": "Replace the current artwork with the original sample?",
+    "ja": "現在の作品を元のサンプルに置き換えますか？"
+  },
+  "已加载原始样本 · 114 个图层": {
+    "en": "Original sample loaded · 114 layers",
+    "ja": "元のサンプルを読み込みました · 114レイヤー"
+  },
+  "替换当前作品并新建？": {
+    "en": "Replace the current artwork with a new one?",
+    "ja": "現在の作品を置き換えて新規作成しますか？"
+  },
+  "新作品": {
+    "en": "New artwork",
+    "ja": "新しい作品"
+  },
+  "新建空白作品，点击“添加”插入符号": {
+    "en": "Blank artwork created. Click Add to insert a symbol.",
+    "ja": "空の作品を作成しました。「追加」でシンボルを挿入できます。"
+  },
+  "图层已上移": {
+    "en": "Layer moved up",
+    "ja": "レイヤーを上に移動しました"
+  },
+  "图层已下移": {
+    "en": "Layer moved down",
+    "ja": "レイヤーを下に移動しました"
+  },
+  "颜色已量化到游戏 6 位色阶": {
+    "en": "Color quantized to the game's 6-bit levels",
+    "ja": "色をゲームの6ビット階調に変換しました"
+  },
+  "已修改不透明度": {
+    "en": "Opacity updated",
+    "ja": "不透明度を変更しました"
+  },
+  "已移动图层": {
+    "en": "Layer moved",
+    "ja": "レイヤーを移動しました"
+  },
+  "缩放比例应为 1–1000%": {
+    "en": "Scale must be 1–1000%",
+    "ja": "拡大率は 1–1000% にしてください"
+  },
+  "已修改作品名称": {
+    "en": "Artwork renamed",
+    "ja": "作品名を変更しました"
+  },
+  "已修改音效编号": {
+    "en": "Sound ID updated",
+    "ja": "サウンド ID を変更しました"
+  },
+  "画幅已修改；图层坐标保持原样": {
+    "en": "Format changed; layer coordinates preserved",
+    "ja": "表示形式を変更しました。レイヤー座標は保持されます"
+  },
+  "已微调图层": {
+    "en": "Layer nudged",
+    "ja": "レイヤーの位置を微調整しました"
+  },
+  "已加载你提供的样本 · 点击图层开始编辑": {
+    "en": "Your sample is loaded · Select a layer to begin editing",
+    "ja": "サンプルを読み込みました · レイヤーを選択して編集を開始"
+  },
+  "发现上次编辑的本地草稿。是否恢复？": {
+    "en": "A local draft from your previous session was found. Restore it?",
+    "ja": "前回のローカル下書きが見つかりました。復元しますか？"
+  },
+  "已恢复本地草稿": {
+    "en": "Local draft restored",
+    "ja": "ローカル下書きを復元しました"
+  },
+  "PRS 数据截断": {
+    "en": "Truncated PRS data",
+    "ja": "PRS データが途中で切れています"
+  },
+  "PRS 解压数据超出安全上限": {
+    "en": "PRS decompression exceeds the safety limit",
+    "ja": "PRS 展開データが安全上限を超えています"
+  },
+  "PRS 引用位置无效": {
+    "en": "Invalid PRS back-reference",
+    "ja": "PRS の参照位置が無効です"
+  },
+  "SAR 文件大小无效": {
+    "en": "Invalid SAR file size",
+    "ja": "SAR ファイルのサイズが無効です"
+  },
+  "不是受支持的 SAR 文件（需要 sar + 04/84）": {
+    "en": "Unsupported SAR file (expected sar + 04/84)",
+    "ja": "未対応の SAR ファイルです（sar + 04/84 が必要）"
+  },
+  "SAR 数据头不完整": {
+    "en": "Incomplete SAR header",
+    "ja": "SAR ヘッダーが不完全です"
+  },
+  "SAR 图层数、长度或 UTF-16 名称无效": {
+    "en": "Invalid SAR layer count, length or UTF-16 name",
+    "ja": "SAR のレイヤー数、長さ、または UTF-16 名称が無効です"
+  },
+  "暂不支持该画幅编码：": {
+    "en": "Unsupported format code: ",
+    "ja": "未対応の表示形式コード："
+  },
+  " 超出范围 ": {
+    "en": " is outside the range ",
+    "ja": " の範囲外："
+  },
+  "不是 Symbol Art Studio 工程": {
+    "en": "Not a Symbol Art Studio project",
+    "ja": "Symbol Art Studio のプロジェクトではありません"
+  },
+  "作者 ID": {
+    "en": "Author ID",
+    "ja": "作者 ID"
+  },
+  "音效": {
+    "en": "Sound",
+    "ja": "サウンド"
+  },
+  "画幅编码无效": {
+    "en": "Invalid format code",
+    "ja": "表示形式コードが無効です"
+  },
+  "名称长度无效": {
+    "en": "Invalid name length",
+    "ja": "名称の長さが無効です"
+  },
+  "最多支持 225 个图层": {
+    "en": "A maximum of 225 layers is supported",
+    "ja": "レイヤーは最大225個です"
+  },
+  "图层必须包含四个顶点": {
+    "en": "Each layer must contain four corners",
+    "ja": "各レイヤーには4つの頂点が必要です"
+  },
+  "坐标无效": {
+    "en": "Invalid coordinates",
+    "ja": "座標が無効です"
+  },
+  "顶点坐标": {
+    "en": "Corner coordinate",
+    "ja": "頂点座標"
+  },
+  "颜色": {
+    "en": "Color",
+    "ja": "色"
+  },
+  "透明度": {
+    "en": "Opacity",
+    "ja": "不透明度"
+  },
+  "符号 ID": {
+    "en": "Symbol ID",
+    "ja": "シンボル ID"
+  },
+  "扩展属性": {
+    "en": "Extra properties",
+    "ja": "拡張属性"
+  },
+  "图层可见状态无效": {
+    "en": "Invalid layer visibility",
+    "ja": "レイヤーの表示状態が無効です"
+  },
+  "无法启动 WebGL，请在浏览器中启用硬件加速": {
+    "en": "WebGL could not start. Enable hardware acceleration in your browser.",
+    "ja": "WebGL を起動できません。ブラウザーでハードウェアアクセラレーションを有効にしてください。"
+  },
+  "符号素材加载失败 #": {
+    "en": "Failed to load symbol asset #",
+    "ja": "シンボル素材を読み込めませんでした #"
+  },
+  "语言已切换": {
+    "en": "Language changed",
+    "ja": "言語を切り替えました"
+  },
+  "已打开 {file} · {count} 个图层": {
+    "en": "Opened {file} · {count} layers",
+    "ja": "{file} を開きました · {count}レイヤー"
+  },
+  "操作失败：{message}": {
+    "en": "Operation failed: {message}",
+    "ja": "操作に失敗しました：{message}"
+  },
+  "Symbol Art Studio 1.3 · 2026-09-29。多语言界面、编辑与文件校验。Blowfish 实现、格式参考和符号素材来自": {
+    "en": "Symbol Art Studio 1.3 · 2026-09-29. Multilingual interface, editing and file validation. The Blowfish implementation, format reference and symbol assets come from ",
+    "ja": "Symbol Art Studio 1.3 · 2026-09-29。多言語 UI・編集・ファイル検証に対応。Blowfish 実装・形式資料・シンボル素材の提供元："
+  },
+  "JSON 工程格式无效，请检查文件内容": {
+    "en": "Invalid JSON project. Please check the file contents.",
+    "ja": "JSON プロジェクトが無効です。ファイルの内容を確認してください。"
+  }
+}
+,supported=['zh-CN','ja','en'],storageKey='symbol-art-studio-language';
+// Use the browser's first preference (normally inherited from the OS).
+// A non-Chinese/non-Japanese primary language always falls back to English.
+function detectLanguage(){
+ const tag=String(root.navigator?.languages?.[0]||root.navigator?.language||'en').toLowerCase().replace(/_/g,'-');
+ if(/^zh(?:-|$)/.test(tag))return 'zh-CN';
+ if(/^ja(?:-|$)/.test(tag))return 'ja';
+ return 'en';
+}
+let preference='auto';try{const saved=localStorage.getItem(storageKey);if(saved==='auto'||supported.includes(saved))preference=saved}catch{}
+let language=preference==='auto'?detectLanguage():preference;
+catalog['自动（系统）']={en:'Auto (system)',ja:'自動（システム）'};
+function t(key,params={}){const value=language==='zh-CN'?key:(catalog[key]?.[language]??key);return value.replace(/\{(\w+)\}/g,(m,k)=>Object.prototype.hasOwnProperty.call(params,k)?String(params[k]):m)}
+function apply(){
+ document.documentElement.lang=language;
+ document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=t(el.dataset.i18n)});
+ for(const attr of ['title','alt','aria-label','placeholder'])document.querySelectorAll('[data-i18n-'+attr+']').forEach(el=>el.setAttribute(attr,t(el.getAttribute('data-i18n-'+attr))));
+ const select=document.getElementById('language');if(select)select.value=preference;
+}
+function setLanguage(value){if(value!=='auto'&&!supported.includes(value))return false;preference=value;language=value==='auto'?detectLanguage():value;try{localStorage.setItem(storageKey,preference)}catch{}apply();return true}
+root.I18N={t,apply,setLanguage,get language(){return language},get preference(){return preference},detectLanguage,supported,catalog};
+apply();
+})(globalThis);
