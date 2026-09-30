@@ -2,8 +2,6 @@
 
 [简体中文](README.md) | [English](README.en.md) | [日本語](README.ja.md)
 
-Updated from the supplied `SymbolArtStudio-v1.html` on 2026-09-29. The original editor, SAR codec, symbol assets, Chinese/Japanese/English interface, and GPL notices are retained.
-
 ## Features
 
 - **Automatic language selection:** By default, the interface follows the browser's primary language, which usually follows the operating system. Chinese (`zh`, including regional and script variants) uses Simplified Chinese; Japanese (`ja`) uses Japanese; every other language uses English. Only the first language preference is used: secondary Chinese or Japanese preferences do not override another primary language. If no language is available, English is used. Manual selections are remembered. Choose **Auto (system)** to restore automatic selection.
